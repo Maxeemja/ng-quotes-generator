@@ -1,0 +1,28 @@
+.author-block {
+  padding: 1rem 3rem;
+  padding-left: calc(3rem + 8px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .genre {
+    color: #828282;
+  }
+  #arrow {
+    display: none;
+    color: #F2F2F2;
+  }
+  &:hover {
+    background-color: #333333;
+    cursor: pointer;
+    .name {
+      color: #fff;
+    }
+    .genre {
+      color: #828282;
+    }
+    #arrow {
+      display: block;
+    }
+  }
+}

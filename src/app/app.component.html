@@ -1,0 +1,21 @@
+<div class="container">
+  <header>
+    <button id="reloadBtn" (click)="setQuote()">
+      reload <mat-icon>rotate_right</mat-icon>
+    </button>
+  </header>
+  <div *ngIf="!toggleList; else list">
+    <app-quote [quote]="quote.text"></app-quote>
+    <app-author
+      [name]="quote.author"
+      [genre]="quote.genre"
+      (toggle)="handleToggle()"
+    ></app-author>
+  </div>
+  <ng-template #list>
+    <app-quotes-list [name]="quote.author"></app-quotes-list>
+  </ng-template>
+  <ngx-spinner size="default" type="line-scale">
+    <p style="color: white">Please Wait.</p>
+  </ngx-spinner>
+</div>
